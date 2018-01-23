@@ -1,0 +1,11 @@
+- name: install openvpn
+  action: apt pkg=openvpn state=present
+
+- name: create /etc/openvpn
+  file: path=/etc/openvpn state=directory mode=0755 owner=root group=root
+
+- name: install client key
+  copy: src=files/{{ansible_hostname}}.conf dest=/etc/openvpn/ mode=0600
+
+- name: start openvpn
+  service: name=openvpn@{{ansible_hostname}} state=started

@@ -1,0 +1,4 @@
+---
+- hosts: openvpn-client
+  roles:
+    - role: openvpn-client

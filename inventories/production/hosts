@@ -1,0 +1,2 @@
+[openvpn-client]
+motherboard ansible_host=127.0.0.2 ansible_connection=ssh ansible_user=deploy ansible_ssh_private_key_file=./id_rsa ansible_become=true
